@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MouseEvents</title>
+    <style>
+        .rectangle{
+           height: 12rem;
+           width: 13rem;
+           background-color: black;
+           box-shadow: rgba(239,247,87,0.2)0px 8px 24px;
+        }
+        body{
+          background-color: black;
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content:center;
+          align-items: center;
+        }
+        button{
+          margin-top: 2rem;
+          border-radius: 3rem;
+          height: 2rem;
+          width: 5rem;
+          background-color: rgba(239,247,87);
+        }
+        .addTransition{
+          border-radius: 50%;
+        }
+        .addTransition1{
+          translate: -30rem 0;
+          transition: 1s;
+        }
+        .addTransition2{
+          translate: 30rem 0;
+          transition: 1s;
+        }
+        .addTransition3{
+          translate: -30rem 0;
+        }
+        .addTransition4{
+          translate: 0rem 0;
+        }
+        footer{
+          display: flex;
+          justify-content: right;
+          width: 100%;
+        }
+        .nextOne{
+          height: 2.5rem;
+          width: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+      <div class="rectangle" ></div>
+      <button id="MyBtn" >click me</button>
+
+<footer>
+    <button onclick="location.href='index.html'"  class="nextOne">👈 Previous Page</button>
+    <button onclick="location.href='keyboardevent.html'"  class="nextOne">Next Page 👉</button>
+</footer>
+
+</body>
+
+<script>
+    let rectItem = document.querySelector(".rectangle");
+    let MyBtn = document.getElementById("MyBtn");
+
+    const handleMouseEvents = () => {
+      console.log("click");
+      rectItem.style.backgroundColor = "#f5ee62";
+    };
+
+    const handleMouseEvents1 = () =>{
+      console.log("dblclick");
+      rectItem.classList.add("addTransition");
+    }
+
+    const handleMouseEvents2 = () => {
+      rectItem.classList.add("addTransition1");
+    }
+
+    const handleMouseEvents3 = () => {
+      rectItem.classList.add("addTransition2");
+    }
+
+    const handleMouseEvents4 = () => {
+      rectItem.classList.add("addTransition3");
+    }
+
+    const handleMouseEvents5 = () => {
+      rectItem.classList.add("addTransition4");
+    }
+
+    MyBtn.addEventListener("click", handleMouseEvents);
+    MyBtn.addEventListener("dblclick", handleMouseEvents1);
+    rectItem.addEventListener("mouseover", handleMouseEvents2);
+    rectItem.addEventListener("mouseout", handleMouseEvents3);
+    rectItem.addEventListener("mousedown", handleMouseEvents4);
+    rectItem.addEventListener("mouseup", handleMouseEvents5);
+</script>
+
+</html>

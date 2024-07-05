@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inputEvent</title>
+
+    <style>
+        body{
+          background-color: black;
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        #mainInput{
+          height: 3rem;
+          width: 19rem;
+          border-radius: 15px;
+          margin-bottom: 2rem;
+          margin-right: 0.9rem;
+          font-size: 1rem;
+        }
+        .output{
+          background-color: white;
+          height: 10rem;
+          width: 20rem;
+          border-radius: .4rem;
+          background-color: #b8b7bd30;
+        }
+        p{
+          margin-left: 2rem;
+          font-size: 1rem;
+          color: white;
+        }
+        footer{
+          display: flex;
+          justify-content: right;
+          width: 100%;
+        }
+        #nextOne{
+          height: 2.5rem;
+          width: 8rem;
+          border-radius: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+        }
+        .nextOne{
+          border-radius: 8rem;
+          height: 2.5rem;
+          width: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="mainInput" name="UserName" placeholder="type something..." />
+<div class="output">
+    <p class="InputVal">Input Value:</p>
+    <p class="InputName">Input name:</p>
+    <p class="InputType">Input type:</p>
+    <p class="eventType">Event type:</p>
+</div>
+
+<footer>
+    <button onclick="location.href='keyboardevent.html'"  id="nextOne">👈 Previous Page</button>
+    <button onclick="location.href='Project.html'"  class="nextOne">Next Page 👉</button>
+</footer>
+
+<script>
+    const InputField = document.getElementById('mainInput');
+
+    const handleInput = (event) =>{
+         console.log(event);
+         console.log("Input Value:", event.target.value);
+         console.log("Input name:", event.target.name);
+         console.log("Input type:", event.inputType);
+         console.log("Event type:", event.type);
+
+         document.querySelector(".InputVal").textContent =  `Input Value: ${event.target.value}`;
+         document.querySelector(".InputName").textContent = `Input Name: ${event.target.name}`;
+         document.querySelector(".InputType").textContent = `Input type: ${event.inputType}`;
+         document.querySelector(".eventType").textContent = `Event type: ${event.type}`;
+    }
+
+InputField.addEventListener('input', handleInput);
+
+</script>
+
+</body>
+</html>

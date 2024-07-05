@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folded</title>
+    <style>
+body{
+   background-color: black;
+}
+
+h1{
+    margin-bottom: 2.4rem;
+    color: white
+}
+
+button{
+    background-color: yellow;
+    border-radius: 8rem;
+    height: 2.5rem;
+    width: 8rem
+}
+
+button:hover{
+   cursor: pointer;
+   background-color: black;
+   color: yellow;
+}
+footer{
+  display: flex;
+  justify-content: right;
+}
+#nextOne{
+  background-color: white;
+  margin-top: 10rem;
+  margin-right: 2rem;
+  color: black;
+}
+
+    </style>
+</head>
+<body>
+
+     <!--Inline Event Start-->
+     <h1> Inline Event </h1>
+     <button onclick="alert('Welcome To My new sasta Projcet')">greeting</button>
+     <button ondblclick="alert('Welcome again to my new sasta projcet')">greeting again</button>
+     <button onmouseover="alert('Welcome yrr')">Greet</button>
+
+     <!--Dom Event Start-->
+     <h1>Dom Event handler</h1>
+     <button id="myBtn">greeting</button>
+     <button id="myBtn1">greeting again</button>
+     <!--Dom Event End-->
+
+     <!--addEventListener Event Start-->
+     <h1>addEventListener Event handler</h1>
+     <button id="myBtn2">greeting</button>
+     <button id="myBtn3">greeting again</button>
+     <!--addEventListener Event End-->
+
+     <!--Total event:-
+     onclick
+     ondblclick
+     onmouseover
+     oncontextmenu: for right click
+     onmousedown: for mouse button press.
+     onmouseenter: the pointer is move onto an element.
+     onmouseleave: the pointer is moved out of an element.
+     onmousemove: the pointer is moving over an element.
+     onmouseout: the mouse pointer moves out of an element.
+     onmouseup: the mouse button is released over an element.
+     -->
+     <!-- Event End-->
+
+     <footer>
+         <button onclick="location.href='mouseevent.html'"  id="nextOne">Next Page 👉</button>
+     </footer>
+
+<script>
+
+  //Dom
+
+    document.getElementById("myBtn").onclick = () => {
+       alert('AA gye fir se');
+    };
+
+    document.getElementById("myBtn1").onmouseover = () =>{
+       alert("Kyon aaye fir se");
+    }
+
+
+ // addEventListener
+
+    document.getElementById("myBtn2").addEventListener("click", () => {
+       alert('Bhai koi kaam ni h kya baar baar aa jata h');
+    });
+f
+    document.getElementById("myBtn3").addEventListener("mouseover", () => {
+       alert('Bhai koi kaam ni h kya baar baar aa jata h');
+    });
+
+</script>
+
+</body>
+</html>

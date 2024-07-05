@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyboardEvent</title>
+
+    <style>
+        body{
+          background-color: black;
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        #mainInput{
+          height: 3rem;
+          width: 19rem;
+          border-radius: 15px;
+          margin-bottom: 2rem;
+          margin-right: 0.9rem;
+          font-size: 1rem;
+        }
+        .output{
+          background-color: white;
+          height: 10rem;
+          width: 20rem;
+          border-radius: .4rem;
+          background-color: #b8b7bd30;
+        }
+        p{
+          margin-left: 2rem;
+          font-size: 1rem;
+          color: white;
+        }
+        footer{
+          display: flex;
+          justify-content: right;
+          width: 100%;
+        }
+        #nextOne{
+          height: 2.5rem;
+          width: 8rem;
+          border-radius: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+        }
+        .nextOne{
+          border-radius: 8rem;
+          height: 2.5rem;
+          width: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="mainInput" placeholder="type something..." />
+    <div class="output">
+        <p class="keyPressed">Key Pressed:</p>
+        <p class="keyCode">Key code:</p>
+        <p class="charCodeAt">Char codeAt:</p>
+        <p class="eventType">Event type:</p>
+    </div>
+
+<footer>
+   <button onclick="location.href='mouseevent.html'"  id="nextOne">👈 Previous Page</button>
+   <button onclick="location.href='inputEvent.html'"  class="nextOne">Next Page 👉</button>
+</footer>
+</body>
+
+<script>
+
+    const handleKeyPress = (event) =>{
+       console.log(event);
+       console.log("key Pressed:", event.key);
+       console.log("Key code:", event.code);
+       console.log("Event type:", event.type);
+
+       document.querySelector(".keyPressed").textContent = `key pressed: ${event.key}`;
+       document.querySelector(".keyCode").textContent = `key code: ${event.code}`;
+       document.querySelector(".charCodeAt").textContent = `Char code: ${event.key.charCodeAt(0)}`;
+       document.querySelector(".eventType").textContent = `Event type: ${event.type}`;
+    }
+
+    const mainInput = document.getElementById("mainInput");
+    mainInput.addEventListener("keyup", handleKeyPress);
+</script>
+
+</html>
