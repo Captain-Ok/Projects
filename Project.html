@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color_gradiant</title>
+    <style>
+        body{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           min-height: 100vh;
+           background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        }
+        button{
+           height: 2.5rem;
+           width: 7rem;
+           border-radius: 2rem;
+           font-size: 1rem;
+           box-shadow: 5px 10px 30px  rgb(2,0,36);
+        }
+        #myButton{
+           background-color: #051937;
+           color: white;
+        }
+        #myButton1{
+           background-color: #008793;
+           color: white;
+        }
+        section{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           color: white;
+        }
+        .copyCode{
+           background-color: rgba(255,255,255,.2);
+           height: 5rem;
+           width: 18rem;
+           border-radius: .5rem;
+           box-sizing: border-box;
+           padding: 1rem;
+           cursor: pointer;
+        }
+        footer{
+          display: flex;
+          justify-content: right;
+          width: 100%;
+        }
+        #nextOne{
+          height: 2.5rem;
+          width: 8rem;
+          border-radius: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+        }
+        .nextOne{
+          border-radius: 8rem;
+          height: 2.5rem;
+          width: 8rem;
+          background-color: white;
+          margin-top: 10rem;
+          margin-right: 2rem;
+          color: black;
+          font-size: .85rem;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <button id="myButton">#051937</button> &nbsp;&nbsp;&nbsp;
+            <button id="myButton1">#008793</button>
+        </div>
+        <h3>Click to copy.</h3>
+        <div class="copyCode">
+            background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198));
+        </div>
+    </section>
+
+    <footer>
+        <button onclick="location.href='inputEvent.html'" class="nextOne"  id="nextOne">👈 Previous Page</button>
+        <button onclick="location.href='#'"  class="nextOne">Next Page 👉</button>
+    </footer>
+
+<script>
+    let btn1 = document.getElementById("myButton");
+let btn2 = document.getElementById("myButton1");
+let copyDiv = document.querySelector(".copyCode")
+let rgb1 = "rgb(92, 145, 229)";
+let rgb2 = "rgb(152, 63, 198)";
+
+const hanBtn = () => {
+   let myHex = "0123456789ABCDEF";
+   let colors = "#";
+   for(let i=0; i<6; i++){
+      colors = colors + myHex[Math.floor(Math.random()*16)];
+   }
+   return colors;
+}
+const handleBtn1 = () =>{
+   rgb1 = hanBtn();
+   document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+   copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+   btn1.innerText = rgb1;
+}
+
+const handleBtn2 = () => {
+   rgb2 = hanBtn();
+   document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+   copyDiv.innerHTML = `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+   btn2.innerText = rgb2;
+}
+
+btn1.addEventListener('click', handleBtn1);
+btn2.addEventListener('click', handleBtn2);
+copyDiv.addEventListener('click', () => {
+   alert('Text copied', navigator.clipboard.writeText(copyDiv.innerText));
+});
+</script>
+</body>
+</html>
