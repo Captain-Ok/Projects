@@ -118,7 +118,7 @@ const handleBtn2 = () => {
 btn1.addEventListener('click', handleBtn1);
 btn2.addEventListener('click', handleBtn2);
 copyDiv.addEventListener('click', () => {
-   navigator.clipboard.writeText(copyDiv.innerText);
+alert('Text copied', navigator.clipboard.writeText(copyDiv.innerText));
 });
 </script>
 </body>
